@@ -141,6 +141,7 @@ if [ "${KDE_FULL_SESSION}" == "true" ]; then
         target_plugin=org.kde.image
         if kpackagetool5 --type="Plasma/Wallpaper" --show="com.github.guss77.variety-plasma-wallpaper" 2>/dev/null >&2; then
             target_plugin=com.github.guss77.variety-plasma-wallpaper
+        fi
         QT_SELECT=5 $qdbus_command org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
         let allDesktops = desktops();
         for (let d of allDesktops) {
