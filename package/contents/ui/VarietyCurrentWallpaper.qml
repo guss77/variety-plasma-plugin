@@ -31,6 +31,11 @@ Item {
 	Connections {
 		target: executable
 		function onExited(exitCode, exitStatus, stdout, stderr) {
+			if (exitCode != 0) {
+				console.log("variety-plasma: Error output from calling variety: [" + 
+					exitStatus + "] " + stderr);
+				return;
+			}
 			path = stdout.replace('\n', ' ').trim();
 			if (!path) {
 				console.log("variety-plasma: empty input, trying to re-resolve");
