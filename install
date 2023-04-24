@@ -38,3 +38,6 @@ if $restartPlasmashell; then
 		kstart5 plasmashell
 	fi
 fi
+
+# install our version of Variety set_wallpaper that knows to talk to our plugin
+[ -e $HOME/.config/variety/scripts/set_wallpaper ] && cp "$PWD/variety_set_wallpaper" $HOME/.config/variety/scripts/set_wallpaper
